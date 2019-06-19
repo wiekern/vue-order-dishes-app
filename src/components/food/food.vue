@@ -56,12 +56,12 @@
 </template>
 
 <script>
+import { formatDate } from 'common/js/date'
 import BScroll from 'better-scroll'
 import cartcontrol from 'components/cartcontrol/cartcontrol'
 import Vue from 'vue'
 import split from 'components/split/split'
 import ratingselect from 'components/ratingselect/ratingselect'
-import { formatDate } from 'common/js/date'
 
 // const POSITIVE = 0
 // const NEGATIVE = 1
