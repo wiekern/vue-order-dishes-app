@@ -70,7 +70,6 @@
 import star from '../star/star'
 
 export default {
-  name: 'v-header',
   props: {
     seller: {
       type: Object,
