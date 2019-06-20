@@ -25,8 +25,7 @@
         </div>
       </div>
       <split></split>
-      <ratingselect :select-type="selectType" :only-content="onlyContent"
-        :desc="desc" :ratings="ratings" @ratingstypeslect="selectRatingType" @togglecontent="toggleContent"></ratingselect>
+      <ratingselect :select-type="selectType" :only-content="onlyContent" :ratings="ratings" @ratingstypeslect="selectRatingType" @togglecontent="toggleContent"></ratingselect>
       <div class="rating-wrapper">
         <ul class="rating">
           <li class="rating-item" v-for="(rating, index) in ratings" :key="index" v-show="needShow(rating.rateType, rating.text)">

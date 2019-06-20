@@ -8,6 +8,7 @@
 
 <script>
 import { getSeller } from 'api'
+import { urlParse } from 'common/js/util'
 import vheader from 'components/v-header/v-header'
 import tab from 'components/tab/tab'
 
@@ -15,19 +16,24 @@ export default {
   name: 'app',
   data() {
     return {
-      seller: {},
+      seller: {
+        id: (() => {
+          let queryParam = urlParse()
+          return queryParam.id
+        })()
+      },
       tabs: [
         '商品', '评价', '商家'
       ]
     }
   },
   created() {
-    this._getSeller()
+    this._getSeller(urlParse())
   },
   methods: {
-    _getSeller() {
-      getSeller().then((seller) => {
-        this.seller = seller
+    _getSeller(params) {
+      getSeller(params).then((seller) => {
+        this.seller = Object.assign({}, this.seller, seller)
       })
     }
   },
