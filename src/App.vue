@@ -2,7 +2,9 @@
   <div id="app">
     <vheader :seller=seller></vheader>
     <tab class="tab-wrapper" :tabs="tabs"></tab>
-    <router-view :seller=seller></router-view>
+    <keep-alive>
+      <router-view :seller=seller></router-view>
+    </keep-alive>
   </div>
 </template>
 
